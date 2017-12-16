@@ -93,9 +93,9 @@ In this operation we start with a random image and continously update the image 
 			<td width="27%" align="center"> Predicted as <strong>Castle</strong> (483) <br/> Confidence: 0.99 </td>
 		</tr>
 		<tr>
-			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-visualizations/master/results/fooling_sample_class_340.jpg"> </td>
-			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-visualizations/master/results/fooling_sample_class_457.jpg"> </td>
-			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-visualizations/master/results/fooling_sample_class_483.jpg"> </td>
+			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/generated/ga_fooling_class_340.jpg"> </td>
+			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/generated/ga_fooling_class_457.jpg"> </td>
+			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/generated/ga_fooling_class_483.jpg"> </td>
 		</tr>
 	</tbody>
 </table>
@@ -112,18 +112,18 @@ This operation works exactly same as the previous one. The only important thing 
 			<td width="27%" align="center"> Predicted as <strong>Snowbird</strong> (13) <br/> Confidence: 0.99 </td>
 		</tr>
 		<tr>
-			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-visualizations/master/input_images/eel.JPEG"> </td>
-			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-visualizations/master/input_images/apple.JPEG"> </td>
-			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-visualizations/master/input_images/bird.JPEG"> </td>
+			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/input_images/eel.JPEG"> </td>
+			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/input_images/apple.JPEG"> </td>
+			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/input_images/bird.JPEG"> </td>
 		</tr>
 		<tr>		<td width="27%" align="center"> Predicted as <strong>Banjo</strong> (420) <br/> Confidence: 0.99 </td>
-			<td width="27%" align="center"> Predicted as <strong>Abacus</strong> (457) <br/> Confidence: 0.99 </td>
+			<td width="27%" align="center"> Predicted as <strong>Abacus</strong> (398) <br/> Confidence: 0.99 </td>
 			<td width="27%" align="center"> Predicted as <strong>Dumbell</strong> (543) <br/> Confidence: 1 </td>
 		</tr>
 		<tr>
-			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-visualizations/master/results/fooling_sample_class_420.jpg"> </td>
-			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-visualizations/master/results/fooling_sample_class_398.jpg"> </td>
-			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-visualizations/master/results/fooling_sample_class_543.jpg"> </td>
+			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/generated/ga_adv_class_420.jpg"> </td>			
+			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/generated/ga_adv_class_398.jpg"> </td>
+			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/generated/ga_adv_class_543.jpg"> </td>
 		</tr>
 	</tbody>
 </table>

@@ -18,7 +18,7 @@ I tried to comment on the code as much as possible, if you have any issues under
 Below, are some sample results for each operation.
 
 ## Fast Gradient Sign - Untargeted
-In this operation we update the original image with signs of the received gradient on the first layer. Untargeted version aims to reduce the confidence of the initial class.
+In this operation we update the original image with signs of the received gradient on the first layer. Untargeted version aims to reduce the confidence of the initial class. The code breaks as soon as the image stops being classified as the original label.
 
 <table border=0 width="50px" >
 	<tbody> 
@@ -49,7 +49,7 @@ In this operation we update the original image with signs of the received gradie
 </table>
 
 ## Fast Gradient Sign - Targeted
-Targeted version of FGS works almost the same as the untargeted version. The only difference is that we do not try to minimize the original label but maximize the target label.
+Targeted version of FGS works almost the same as the untargeted version. The only difference is that we do not try to minimize the original label but maximize the target label. The code breaks as soon as the image is predicted as the target class.
 
 <table border=0 width="50px" >
 	<tbody> 

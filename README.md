@@ -4,7 +4,7 @@ This repo contains following CNN adversarial attacks implemented in Pytorch:
 
 * Fast Gradient Sign, Untargeted [1]
 * Fast Gradient Sign, Targeted [1]
-* Gradient Ascent, Adversarial Images 
+* Gradient Ascent, Adversarial Images [2]
 * Gradient Ascent, Fooling Images (Unrecognizable images predicted as classes with high confidence) [2]
 
 It will also include more adverisarial attack techniques and defenses in the future as well.
@@ -18,26 +18,72 @@ I tried to comment on the code as much as possible, if you have any issues under
 Below, are some sample results for each operation.
 
 ## Fast Gradient Sign - Untargeted
-
+In this operation we update the original image with signs of the received gradient on the first layer. Untargeted version aims to reduce the confidence of the initial class.
 
 <table border=0 width="50px" >
 	<tbody> 
-    <tr>		<td width="27%" align="center"> Predicted as <strong>Zebra</strong> (340) <br/> Confidence: 0.94 </td>
-			<td width="27%" align="center"> Predicted as <strong>Bow tie</strong> (457) <br/> Confidence: 0.95 </td>
-			<td width="27%" align="center"> Predicted as <strong>Castle</strong> (483) <br/> Confidence: 0.99 </td>
+    <tr>		<td width="27%" align="center"> Predicted as <strong>Eel</strong> (390) <br/> Confidence: 0.96 </td>
+			<td width="27%" align="center"> Adversarial Noise </td>
+			<td width="27%" align="center"> Predicted as <strong>Blowfish</strong> (397) <br/> Confidence: 0.81 </td>
 		</tr>
 		<tr>
-			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/pytorch-cnn-adversarial-attacks/master/input_images/eel.JPEG"> </td>
+			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/input_images/eel.JPEG"> </td>
 			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/generated/untargeted_adv_noise_from_390_to_397.png"> </td>
 			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/generated/untargeted_adv_img_from_390_to_397.png"> </td>
 		</tr>
 	</tbody>
 </table>
 
+<table border=0 width="50px" >
+	<tbody> 
+    <tr>		<td width="27%" align="center"> Predicted as <strong>Snowbird</strong> (13) <br/> Confidence: 0.99 </td>
+			<td width="27%" align="center"> Adversarial Noise </td>
+			<td width="27%" align="center"> Predicted as <strong>Chickadee</strong> (19) <br/> Confidence: 0.95 </td>
+		</tr>
+		<tr>
+			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/input_images/bird.JPEG"> </td>
+			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/generated/untargeted_adv_noise_from_13_to_19.png"> </td>
+			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/generated/untargeted_adv_img_from_13_to_19.png"> </td>
+		</tr>
+	</tbody>
+</table>
+
+## Fast Gradient Sign - Targeted
+Targeted version of FGS works almost the same as the untargeted version. The only difference is that we do not try to minimize the original label but maximize the target label.
+
+<table border=0 width="50px" >
+	<tbody> 
+    <tr>		<td width="27%" align="center"> Predicted as <strong>Apple</strong> (948) <br/> Confidence: 0.95 </td>
+			<td width="27%" align="center"> Adversarial Noise </td>
+			<td width="27%" align="center"> Predicted as <strong>Rock python</strong> (62) <br/> Confidence: 0.16 </td>
+		</tr>
+		<tr>
+			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/input_images/apple.JPEG"> </td>
+			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/generated/targeted_adv_noise_from_948_to_62.png"> </td>
+			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/generated/targeted_adv_img_from_948_to_62.png"> </td>
+		</tr>
+	</tbody>
+</table>
 
 
-## Fooling Image Generation
-This operation is quite similar to generating class specific images, we start with a random image and continously update the image with targeted backpropagation (for a certain class) and stop when we achieve target confidence for that class. All of the below images are generated from pretrained AlexNet to fool it.
+<table border=0 width="50px" >
+	<tbody> 
+    <tr>		<td width="27%" align="center"> Predicted as <strong>Apple</strong> (948) <br/> Confidence: 0.95 </td>
+			<td width="27%" align="center"> Adversarial Noise </td>
+			<td width="27%" align="center"> Predicted as <strong>Mud turtle</strong> (35) <br/> Confidence: 0.54 </td>
+		</tr>
+		<tr>
+			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/input_images/apple.JPEG"> </td>
+			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/generated/targeted_adv_noise_from_948_to_35.png"> </td>
+			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/generated/targeted_adv_img_from_948_to_35.png"> </td>
+		</tr>
+	</tbody>
+</table>
+
+
+
+## Gradient Ascent - Fooling Image Generation
+In this operation we start with a random image and continously update the image with targeted backpropagation (for a certain class) and stop when we achieve target confidence for that class. All of the below images are generated from pretrained AlexNet to fool it.
 
 
 <table border=0 width="50px" >
@@ -55,8 +101,8 @@ This operation is quite similar to generating class specific images, we start wi
 </table>
 
 
-## Disguised Fooling (Adversarial) Image Generation
-For this operation we start with an image and perform gradient updates on the image for a specific class but with smaller learning rates so that the original image does not change too much. As it can be seen from samples, on some images it is almost impossible to recognize the difference between two images but on others it can clearly be observed that something is wrong. All of the examples below were created from and tested on AlexNet to fool it.
+## Gradient Ascent - Adversarial Image Generation
+This operation works exactly same as the previous one. The only important thing is that keeping learning rate a bit smaller so that the image does not receive huge updates so that it will continue to look like the originial. As it can be seen from samples, on some images it is almost impossible to recognize the difference between two images but on others it can clearly be observed that something is wrong. All of the examples below were created from and tested on AlexNet to fool it.
 
 
 <table border=0 width="50px" >
@@ -96,22 +142,6 @@ opencv >= 3.1.0
 
 ## References:
 
-[1] J. T. Springenberg, A. Dosovitskiy, T. Brox, and M. Riedmiller. *Striving for Simplicity: The All Convolutional Net*, https://arxiv.org/abs/1412.6806
+[1]  I. J. Goodfellow, J. Shlens, C. Szegedy. *Explaining and Harnessing Adversarial Examples* https://arxiv.org/abs/1412.6572
 
-[2] B. Zhou, A. Khosla, A. Lapedriza, A. Oliva, A. Torralba. *Learning Deep Features for Discriminative Localization*, https://arxiv.org/abs/1512.04150
-
-[3] R. R. Selvaraju, A. Das, R. Vedantam, M. Cogswell, D. Parikh, and D. Batra. *Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization*, https://arxiv.org/abs/1610.02391
-
-[4] K. Simonyan, A. Vedaldi, A. Zisserman. *Deep Inside Convolutional Networks: Visualising Image Classification Models and Saliency Maps*, https://arxiv.org/abs/1312.6034
-
-[5] A. Mahendran, A. Vedaldi. *Understanding Deep Image Representations by Inverting Them*, https://arxiv.org/abs/1412.0035
-
-[6] H. Noh, S. Hong, B. Han,  *Learning Deconvolution Network for Semantic Segmentation* https://www.cv-foundation.org/openaccess/content_iccv_2015/papers/Noh_Learning_Deconvolution_Network_ICCV_2015_paper.pdf
-
-[7] A. Nguyen, J. Yosinski, J. Clune.  *Deep Neural Networks are Easily Fooled: High Confidence Predictions for Unrecognizable  Images* https://arxiv.org/abs/1412.1897
-
-[8] D. Smilkov, N. Thorat, N. Kim, F. Viégas, M. Wattenberg. *SmoothGrad: removing noise by adding noise* https://arxiv.org/abs/1706.03825
-
-[9] D. Erhan, Y. Bengio, A. Courville, P. *Vincent. Visualizing Higher-Layer Features of a Deep Network* https://www.researchgate.net/publication/265022827_Visualizing_Higher-Layer_Features_of_a_Deep_Network
-
-[10] A. Mordvintsev, C. Olah, M. Tyka. *Inceptionism: Going Deeper into Neural Networks* https://research.googleblog.com/2015/06/inceptionism-going-deeper-into-neural.html
+[2] A. Nguyen, J. Yosinski, J. Clune.  *Deep Neural Networks are Easily Fooled: High Confidence Predictions for Unrecognizable  Images* https://arxiv.org/abs/1412.1897

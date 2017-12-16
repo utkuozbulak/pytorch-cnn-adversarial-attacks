@@ -17,7 +17,8 @@ from misc_functions import preprocess_image, recreate_image, get_params
 
 class FastGradientSignTargeted():
     """
-
+        Fast gradient sign untargeted adversarial attack, maximizes the target class activation
+        with iterative grad sign updates
     """
     def __init__(self, model, alpha):
         self.model = model
@@ -82,10 +83,10 @@ class FastGradientSignTargeted():
                 # Create the image for noise as: Original image - generated image
                 noise_image = original_image - recreated_image
                 cv2.imwrite('../generated/targeted_adv_noise_from_' + str(org_class) + '_to_' +
-                            str(confirmation_prediction) + '.png', noise_image)
+                            str(confirmation_prediction) + '.jpg', noise_image)
                 # Write image
                 cv2.imwrite('../generated/targeted_adv_img_from_' + str(org_class) + '_to_' +
-                            str(confirmation_prediction) + '.png', recreated_image)
+                            str(confirmation_prediction) + '.jpg', recreated_image)
                 break
 
         return 1
@@ -95,7 +96,7 @@ if __name__ == '__main__':
     target_example = 0  # Apple
     (original_image, prep_img, org_class, _, pretrained_model) =\
         get_params(target_example)
-    target_class = 35  # Mud turtle
+    target_class = 62  # Mud turtle
 
     FGS_untargeted = FastGradientSignTargeted(pretrained_model, 0.01)
     FGS_untargeted.generate(original_image, org_class, target_class)

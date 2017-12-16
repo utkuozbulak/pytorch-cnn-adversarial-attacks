@@ -17,7 +17,8 @@ from misc_functions import preprocess_image, recreate_image, get_params
 
 class FastGradientSignUntargeted():
     """
-
+        Fast gradient sign untargeted adversarial attack, minimizes the initial class activation
+        with iterative grad sign updates
     """
     def __init__(self, model, alpha):
         self.model = model
@@ -81,10 +82,10 @@ class FastGradientSignUntargeted():
                 # Create the image for noise as: Original image - generated image
                 noise_image = original_image - recreated_image
                 cv2.imwrite('../generated/untargeted_adv_noise_from_' + str(im_label) + '_to_' +
-                            str(confirmation_prediction) + '.png', noise_image)
+                            str(confirmation_prediction) + '.jpg', noise_image)
                 # Write image
                 cv2.imwrite('../generated/untargeted_adv_img_from_' + str(im_label) + '_to_' +
-                            str(confirmation_prediction) + '.png', recreated_image)
+                            str(confirmation_prediction) + '.jpg', recreated_image)
                 break
 
         return 1

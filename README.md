@@ -28,8 +28,8 @@ In this operation we update the original image with signs of the received gradie
 		</tr>
 		<tr>
 			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/input_images/eel.JPEG"> </td>
-			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/generated/untargeted_adv_noise_from_390_to_397.png"> </td>
-			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/generated/untargeted_adv_img_from_390_to_397.png"> </td>
+			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/generated/untargeted_adv_noise_from_390_to_397.jpg"> </td>
+			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/generated/untargeted_adv_img_from_390_to_397.jpg"> </td>
 		</tr>
 	</tbody>
 </table>
@@ -42,8 +42,8 @@ In this operation we update the original image with signs of the received gradie
 		</tr>
 		<tr>
 			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/input_images/bird.JPEG"> </td>
-			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/generated/untargeted_adv_noise_from_13_to_19.png"> </td>
-			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/generated/untargeted_adv_img_from_13_to_19.png"> </td>
+			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/generated/untargeted_adv_noise_from_13_to_19.jpg"> </td>
+			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/generated/untargeted_adv_img_from_13_to_19.jpg"> </td>
 		</tr>
 	</tbody>
 </table>
@@ -59,8 +59,8 @@ Targeted version of FGS works almost the same as the untargeted version. The onl
 		</tr>
 		<tr>
 			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/input_images/apple.JPEG"> </td>
-			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/generated/targeted_adv_noise_from_948_to_62.png"> </td>
-			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/generated/targeted_adv_img_from_948_to_62.png"> </td>
+			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/generated/targeted_adv_noise_from_948_to_62.jpg"> </td>
+			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/generated/targeted_adv_img_from_948_to_62.jpg"> </td>
 		</tr>
 	</tbody>
 </table>
@@ -74,8 +74,8 @@ Targeted version of FGS works almost the same as the untargeted version. The onl
 		</tr>
 		<tr>
 			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/input_images/apple.JPEG"> </td>
-			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/generated/targeted_adv_noise_from_948_to_35.png"> </td>
-			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/generated/targeted_adv_img_from_948_to_35.png"> </td>
+			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/generated/targeted_adv_noise_from_948_to_35.jpg"> </td>
+			<td width="27%" align="center"> <img src="https://raw.githubusercontent.com/utkuozbulak/pytorch-cnn-adversarial-attacks/master/generated/targeted_adv_img_from_948_to_35.jpg"> </td>
 		</tr>
 	</tbody>
 </table>

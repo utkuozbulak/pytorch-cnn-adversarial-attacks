@@ -80,10 +80,10 @@ class FastGradientSignUntargeted():
                       'and predicted with confidence of:', confirmation_confidence)
                 # Create the image for noise as: Original image - generated image
                 noise_image = original_image - recreated_image
-                cv2.imwrite('../generated/Adv_noise_from_' + str(im_label) + '_to_' +
+                cv2.imwrite('../generated/untargeted_adv_noise_from_' + str(im_label) + '_to_' +
                             str(confirmation_prediction) + '.png', noise_image)
                 # Write image
-                cv2.imwrite('../generated/Adv_img_from_' + str(im_label) + '_to_' +
+                cv2.imwrite('../generated/untargeted_adv_img_from_' + str(im_label) + '_to_' +
                             str(confirmation_prediction) + '.png', recreated_image)
                 break
 
@@ -91,7 +91,7 @@ class FastGradientSignUntargeted():
 
 
 if __name__ == '__main__':
-    target_example = 3  # Eel
+    target_example = 2  # Eel
     (original_image, prep_img, target_class, _, pretrained_model) =\
         get_params(target_example)
 

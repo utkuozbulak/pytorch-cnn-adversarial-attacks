@@ -81,10 +81,10 @@ class FastGradientSignTargeted():
                       'and predicted with confidence of:', confirmation_confidence)
                 # Create the image for noise as: Original image - generated image
                 noise_image = original_image - recreated_image
-                cv2.imwrite('../generated/Adv_noise_from_' + str(org_class) + '_to_' +
+                cv2.imwrite('../generated/targeted_adv_noise_from_' + str(org_class) + '_to_' +
                             str(confirmation_prediction) + '.png', noise_image)
                 # Write image
-                cv2.imwrite('../generated/Adv_img_from_' + str(org_class) + '_to_' +
+                cv2.imwrite('../generated/targeted_adv_img_from_' + str(org_class) + '_to_' +
                             str(confirmation_prediction) + '.png', recreated_image)
                 break
 
@@ -92,10 +92,10 @@ class FastGradientSignTargeted():
 
 
 if __name__ == '__main__':
-    target_example = 3  # Eel
+    target_example = 0  # Apple
     (original_image, prep_img, org_class, _, pretrained_model) =\
         get_params(target_example)
-    target_class = 300
+    target_class = 35  # Mud turtle
 
     FGS_untargeted = FastGradientSignTargeted(pretrained_model, 0.01)
     FGS_untargeted.generate(original_image, org_class, target_class)

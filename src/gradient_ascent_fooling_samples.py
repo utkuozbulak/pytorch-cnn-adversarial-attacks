@@ -45,7 +45,7 @@ class FoolingSampleGeneration():
                 # this is needed because the format of preprocessed image is float and when
                 # it is written back to file it is converted to uint8, so there is a chance that
                 # there are some losses while writing
-                confirmation_image = cv2.imread('../generated/GA_fooling_class_' +
+                confirmation_image = cv2.imread('../generated/ga_fooling_class_' +
                                                 str(self.target_class) + '.jpg', 1)
                 # Preprocess image
                 confirmation_processed_image = preprocess_image(confirmation_image)
@@ -70,7 +70,7 @@ class FoolingSampleGeneration():
             # Recreate image
             self.created_image = recreate_image(self.processed_image)
             # Save image
-            cv2.imwrite('../generated/GA_fooling_class_' + str(self.target_class) + '.jpg',
+            cv2.imwrite('../generated/ga_fooling_class_' + str(self.target_class) + '.jpg',
                         self.created_image)
         return self.processed_image
 

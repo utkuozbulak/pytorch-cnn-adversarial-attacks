@@ -1,13 +1,13 @@
 # Convolutional Neural Network Adversarial Attacks
 
-This repo contains following CNN adversarial attacks implemented in Pytorch: 
+This repo is a branch off of [CNN Visualisations](https://github.com/utkuozbulak/pytorch-cnn-visualizations) because it was starting to get bloated. It contains following CNN adversarial attacks implemented in Pytorch: 
 
 * Fast Gradient Sign, Untargeted [1]
 * Fast Gradient Sign, Targeted [1]
 * Gradient Ascent, Adversarial Images [2]
 * Gradient Ascent, Fooling Images (Unrecognizable images predicted as classes with high confidence) [2]
 
-It will also include more adverisarial attack techniques and defenses in the future as well.
+It will also include more adverisarial attack and defenses techniques in the future as well.
 
 The code uses pretrained AlexNet in the model zoo. You can simply change it with your model but don't forget to change target class parameters as well.
 

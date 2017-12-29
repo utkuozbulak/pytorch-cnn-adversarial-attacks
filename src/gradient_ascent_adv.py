@@ -75,7 +75,7 @@ class DisguisedFoolingSampleGeneration():
 
 
 if __name__ == '__main__':
-    target_example = 3  # Appple
+    target_example = 0  # Appple
     (original_image, prep_img, _, _, pretrained_model) =\
         get_params(target_example)
 

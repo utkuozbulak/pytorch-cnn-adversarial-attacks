@@ -1,5 +1,8 @@
 # Convolutional Neural Network Adversarial Attacks
 
+
+**Note**: I am aware that there are some issues with the code, I will update this repository soon (Also will move away from cv2 to PIL).
+
 This repo is a branch off of [CNN Visualisations](https://github.com/utkuozbulak/pytorch-cnn-visualizations) because it was starting to get bloated. It contains following CNN adversarial attacks implemented in Pytorch: 
 
 * Fast Gradient Sign, Untargeted [1]
